@@ -15,13 +15,6 @@ int main(int argc, char** argv) {
 	
 	int c;
 	srand(time(NULL));
-	// printf("This is the unsorted array: ");
-	for(c = 0; c < n; c++) {
-		
-		original_array[c] = rand() % n;
-		// printf("%d ", original_array[c]);
-		
-	}
 
 	// printf("\n");
 	// printf("\n");
@@ -36,6 +29,12 @@ int main(int argc, char** argv) {
 	MPI_Init(&argc, &argv);
 	MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
 	MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+
+	if (world_rank == 0) {
+		for(c = 0; c < n; c++) {
+			original_array[c] = rand() % n;
+		}
+	}
 		
 	/********** Divide the array into equal-sized chunks **********/
 	int size = n / world_size;
