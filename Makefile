@@ -1,18 +1,19 @@
-CC = mpic++
+CXX = mpic++
+CC = gcc
+nvcc = nvcc
 CFLAGS = -Wall -Wextra -O2
 LDFLAGS = -lm
 
-TARGET = Merge_Sort_MPI
-SRCS = Merge_Sort_MPI.cpp
-OBJS = $(SRCS:.cpp=.o)
+all: Merge_Sort_MPI mergeSortCUDA mergeSortOMP
 
-all: $(TARGET)
+Merge_Sort_MPI: Merge_Sort_MPI.cpp
+	$(CXX) $(CFLAGS) -o Merge_Sort_MPI Merge_Sort_MPI.cpp $(LDFLAGS)
 
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET) $(LDFLAGS)
+mergeSortCUDA: mergeSortCUDA.cu
+	$(nvcc) -o mergeSortCUDA mergeSortCUDA.cu $(LDFLAGS)
 
-.cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $@
+mergeSortOMP: mergeSortOMP.c
+	$(CC) $(CFLAGS) -o mergeSortOMP mergeSortOMP.c $(LDFLAGS) -fopenmp
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f Merge_Sort_MPI mergeSortCUDA mergeSortOMP
