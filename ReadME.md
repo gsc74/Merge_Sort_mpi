@@ -17,7 +17,7 @@ sbatch job.sh
     <img src="strong_scaling.png" width="700" alt="Strong_Scale"/>
 </p>
 
-> Strong Scaling on Merge-Sort on "AMD EPYC 9124 16-Core Processor"
+> Strong Scaling of Distributed Merge-Sort on "AMD EPYC 9124 16-Core Processor"
 
 [Slides for tutorial](Merge_Sort_MPI.pdf)
 
