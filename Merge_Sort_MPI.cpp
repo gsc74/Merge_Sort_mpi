@@ -62,7 +62,7 @@ int main(int argc, char** argv) {
 		
 		/********** Display the sorted array **********/
 		printf("This is the sorted array: ");
-		for(c = 0; c < 10; c++) {
+		for(c = 0; c < 100; c++) {
 			printf("%d ", sorted[c]);
 		}
 			
