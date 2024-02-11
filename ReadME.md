@@ -7,7 +7,7 @@ cd Merge_Sort_mpi
 make
 
 # Test
-mpirun -np 8 ./Merge_Sort_MPI
+mpirun -np 8 ./Merge_Sort_MPI 1000000000
 
 # Submit a job to KIAC cluster
 sbatch job.sh
