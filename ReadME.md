@@ -19,7 +19,7 @@ sbatch job.sh
 
 > Strong Scaling of Distributed Merge-Sort on "AMD EPYC 9124 16-Core Processor"
 
-[Slides for tutorial](Merge_Sort_MPI.pdf)
+[Slides for tutorial](Merge-Sort_MPI.pdf)
 
 ## <a name="pub"></a> References
 [Parallel Merge-Sort with MPI (code)](https://github.com/racorretjer/Parallel-Merge-Sort-with-MPI) \
